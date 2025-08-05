@@ -2,3 +2,4 @@ livekit-agents
 fastapi
 uvicorn
 requests
+twilio
