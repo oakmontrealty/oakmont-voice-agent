@@ -1,4 +1,4 @@
-# Use official Python runtime as base image
+# Use official Python runtime as a base image
 FROM python:3.10-slim
 
 # Set work directory
@@ -11,5 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Default command
-CMD ["python", "agent.py"]
+# Expose port 8080 for Cloud Run
+EXPOSE 8080
+
+# Default command to run the FastAPI server via uvicorn
+CMD ["uvicorn", "agent:app", "--host", "0.0.0.0", "--port", "8080"]
