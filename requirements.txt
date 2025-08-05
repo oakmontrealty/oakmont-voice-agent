@@ -1,0 +1,4 @@
+livekit-agents
+fastapi
+uvicorn
+requests
